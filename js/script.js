@@ -16,9 +16,9 @@ function consultaEndereco() {
             let bairro = data.bairro;
             let cidade = data.localidade;
 
-            mensagemEndereco.innerHTML = `  <h3>Aqui está o endereço consultado:</h3> 
+            mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
                                             <p>CEP:${cep} </p> 
-                                            <p>Logradouro: ${logradouro}\n</p>
+                                            <p>Logradouro: <span>${logradouro} </span>\n</p>
                                            <p> Complemento:${complemento} \n</p>
                                             <p>Bairro: ${bairro}\n </p>
                                             <p>Cidade: ${cidade} - ${data.uf}</p>`;

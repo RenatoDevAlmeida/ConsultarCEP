@@ -69,10 +69,15 @@ form {
 }
 .endereco {
     display: grid;    
-    align-items: center;
-    
-    color: #13131f;
-   
+    align-items: center;    
+    color: #838383;   
+}
+.endereco h6 {
+    font-weight: bold;
+    color: #000;
+}
+.endereco span {
+    color: #8257E6;
 }
 footer div {
     height: 150px;

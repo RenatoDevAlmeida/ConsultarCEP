@@ -66,15 +66,10 @@ main {
     grid-area: btn-conteudo;
     
 }
-
 .endereco {
     grid-area: endereco;
     
 }
-
-
-
-
 #btn-entrar {
     background-image: linear-gradient(90deg, rgba(130,87,230,0.8) .2%, rgba(121,48,190,0.648) 100%);
     border: none;
@@ -89,6 +84,9 @@ main {
     padding: 15px 15px;
     border-radius: 30px;
     outline: none;
+}
+#cep::placeholder {
+    color:#b8b6b6;
 }
 form {
    text-transform: uppercase;    

@@ -20,7 +20,7 @@ function consultaEndereco() {
                                                 <p> Complemento:  <span>${data.complemento}</span> </p>
                                                 <p>Bairro:  <span>${data.bairro}</span> - Cidade: <span> ${data.localidade} - </span> <span>${data.uf} </span></p>`;
                     } else {
-                        mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
+                        mensagemEndereco.innerHTML = `  <h6>Endereço consultado:</h6> 
                                                 <p>CEP: <span> ${data.cep}</span> - 
                                                 Logradouro: <span> ${data.logradouro}</span> </p>
                                                 

@@ -183,12 +183,17 @@ footer span {
 } 
 @media (max-width: 407px) {
     main {    
-        margin-top: 5%;
+        margin-top: -10%;
         max-width: 250px;
         width: 250px;
         height: 60vh;
         max-height: 70vh;
         padding: 10px;
+    }
+    .endereco {
+       
+        text-align: justify;
+        font-size: 0.85rem;
     }
     .grid {
         

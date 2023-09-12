@@ -7,13 +7,14 @@ function consultaEndereco() {
         mensagemEndereco.innerHTML = "Verifique a quantidade de caracteres!";
         return;
     } else {
+
         mensagemEndereco.style.color = "#838383";
         let url = `https://viacep.com.br/ws/${cep}/json/`;
         fetch(url).then(function(response){
             response.json().then(function(data){    
                 if(data.complemento) {    
                 
-                    mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
+                    mensagemEndereco.innerHTML = `  <h6>Endereço consultado:</h6> 
                                                 <p>CEP: <span> ${data.cep}</span> - 
                                                 Logradouro: <span> ${data.logradouro}</span> </p>
                                                 <p> Complemento:  <span>${data.complemento}</span> </p>

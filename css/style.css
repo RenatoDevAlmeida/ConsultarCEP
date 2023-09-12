@@ -6,48 +6,75 @@
 }
 body {
     background: #F9F9F9;
-    display: grid;    
-    max-height: 800px;
-    height: 100vh;
+    
 }
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #000;
-    height: 80px;
-    display: flex;
-    align-items: end;
+    display: grid;
+    height:  80px;
+    position: relative;
+}
+header div {
+    display: grid;
+    background: #000;       
+    align-items: center;
     color: #F9F9F9;
     justify-content: center;
     font-size: 20px;
    
 }
-header h2 {
-    display: grid;
-    align-self: center;
-}
-
 header::after{
-    content: "";
-    display: block;
+    content: "";   
     position: absolute;
     width: 100%;
-    height: 0.1rem;
+    height: 0.15rem;
     background-image: linear-gradient(90deg, #8257E6 0%, #A40EE4 92.32%);
+    bottom: -0.2px;
 }
-main {
-    display: grid;  
-    padding: 100px;
+.conteudo {
+    display: grid;
+    height: auto;   
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px;    
+    align-self: center;
+}
+.grid {
+    
+    grid-template-areas: 
+        "p-conteudo . ."
+        "p-conteudo . ."
+        "inp-conteudo . ."
+        "btn-conteudo . ."
+        "endereco . .";
+}
+main {    
+    
+    max-width: 600px;
+    width: 400px;
+    height: 70vh;
+    max-height: 70vh;
+    margin-top: -1rem;
+}
+#p-conteudo {
+    grid-area: p-conteudo;
+    color: #838383
+}
+#inp-conteudo {
+    grid-area: inp-conteudo;
+}
+#btn-conteudo {
+    grid-area: btn-conteudo;
     
 }
-.conteudo {    
-    display: grid;  
-    align-items: center;
-    text-transform: uppercase; 
-    justify-content: center;
-    height: 800px;
+
+.endereco {
+    grid-area: endereco;
+    
 }
+
+
+
+
 #btn-entrar {
     background-image: linear-gradient(90deg, rgba(130,87,230,0.8) .2%, rgba(121,48,190,0.648) 100%);
     border: none;
@@ -55,22 +82,24 @@ main {
     padding: 15px 40px;
     width: 100%;
     color: #F9F9F9;
+    margin-bottom: 5px;;
 }
+
 #cep {
-   
+    padding: 15px 15px;
     border-radius: 30px;
     outline: none;
 }
 form {
-   
-    
-    text-transform: uppercase;
-    
+   text-transform: uppercase;    
 }
+
 .endereco {
+    text-align: center;
     display: grid;    
     align-items: center;    
-    color: #838383;   
+    color: #838383;
+    margin-bottom: 20px;   
 }
 .endereco h6 {
     font-weight: bold;
@@ -79,34 +108,110 @@ form {
 .endereco span {
     color: #8257E6;
 }
+footer {
+    position: relative;
+}
 footer div {
-    height: 150px;
+    position: fixed;
+    height: 6.25rem;
     background: #000;
-    width: 100vw;
+    width: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     color: #F9F9F9;
-    position: fixed;
     bottom: 0;
+   
 }
 footer span {
     color: #8257E6;
 }
+ 
+
+ 
 /* .endereco h3 {
    
 } */
 
-@media (max-width: 625px) {
+
+/* ==================RESPONSIVIDADE================== */
+@media (min-height: 769px) {
+    main {
+        margin-top: 20%;
+        padding-top: 50px;
+        
+    }
+    
+}
+
+/* TELAS 768px de altura */
+@media (max-height: 768px) {
+    .conteudo {
+        height: 65vh;
+        
+    }
+    main {    
+        max-width: 600px;
+        width: 400px;
+                      
+    }
+    footer div {
+        height: 6rem;
+    }
+   
+}
+
+ @media (max-width: 625px) {
 
     footer div p {
-        font-size: 0.7rem;
+        /* font-size: 1rem; */
+        text-align: center;
     }
 
 }
 @media (max-width: 437px) {
     footer div p {
-        font-size: 0.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+} 
+
+@media (max-width: 313px) {
+    header div h2 {
+        font-size: 1.2rem;
+    }   
+
+} 
+@media (max-width: 407px) {
+    main {    
+        margin-top: 5%;
+        max-width: 250px;
+        width: 250px;
+        height: 60vh;
+        max-height: 70vh;
+        padding: 10px;
+    }
+    .grid {
+        
+        grid-template-areas: 
+            "p-conteudo "            
+            "inp-conteudo "
+            "btn-conteudo "
+            "endereco ";
+    }
+    #btn-entrar {
+       
+        border-radius: 40px;
+        padding: 10px 30px;
+        width: 100%;
+        color: #F9F9F9;
+    }
+    
+    #cep {
+        padding: 10px 10px;
+        border-radius: 40px;
+        outline: none;
     }
 
 }

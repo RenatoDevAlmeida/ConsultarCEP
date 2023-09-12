@@ -6,27 +6,30 @@ function consultaEndereco() {
         mensagemEndereco.style.color = "red";
         mensagemEndereco.innerHTML = "Verifique a quantidade de caracteres!";
         return;
-    } 
-    let url = `https://viacep.com.br/ws/${cep}/json/`;
-    fetch(url).then(function(response){
-        response.json().then(function(data){
-            let cep = data.cep;
-            let logradouro  = data.logradouro;
-            let complemento = data.complemento;
-            let bairro = data.bairro;
-            let cidade = data.localidade;
-
-            mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
-                                            <p>CEP:${cep} </p> 
-                                            <p>Logradouro: <span>${logradouro} </span>\n</p>
-                                           <p> Complemento:${complemento} \n</p>
-                                            <p>Bairro: ${bairro}\n </p>
-                                            <p>Cidade: ${cidade} - ${data.uf}</p>`;
+    } else {
+        mensagemEndereco.style.color = "#838383";
+        let url = `https://viacep.com.br/ws/${cep}/json/`;
+        fetch(url).then(function(response){
+            response.json().then(function(data){    
+                if(data.complemento) {    
+                
+                    mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
+                                                <p>CEP: <span> ${data.cep}</span> - 
+                                                Logradouro: <span> ${data.logradouro}</span> </p>
+                                                <p> Complemento:  <span>${data.complemento}</span> </p>
+                                                <p>Bairro:  <span>${data.bairro}</span> - Cidade: <span> ${data.localidade} - </span> <span>${data.uf} </span></p>`;
+                    } else {
+                        mensagemEndereco.innerHTML = `  <h6>Aqui está o endereço consultado:</h6> 
+                                                <p>CEP: <span> ${data.cep}</span> - 
+                                                Logradouro: <span> ${data.logradouro}</span> </p>
+                                                
+                                                <p>Bairro:  <span>${data.bairro}</span> - Cidade: <span> ${data.localidade} - </span> <span>${data.uf} </span></p>`;
+                    }
 
         });
     });
 
-
+    }
     
 }
 // consultaEndereco();

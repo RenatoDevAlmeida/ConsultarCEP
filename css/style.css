@@ -99,6 +99,9 @@ form {
     color: #838383;
     margin-bottom: 20px;   
 }
+.endereco h4 {
+    color: red;
+}
 .endereco h6 {
     font-weight: bold;
     color: #000;
@@ -146,7 +149,7 @@ footer span {
 @media (max-height: 768px) {
     .conteudo {
         height: 65vh;
-        
+       
     }
     main {    
         max-width: 600px;
@@ -171,6 +174,7 @@ footer span {
     footer div p {
         text-align: center;
         font-size: 0.75rem;
+        padding: 0px 20px ;
     }
 
 } 
@@ -181,11 +185,11 @@ footer span {
     }   
 
 } 
-@media (max-width: 407px) {
+@media (max-width: 430px) {
     main {    
         margin-top: -10%;
-        max-width: 250px;
-        width: 250px;
+        max-width: 300px;
+        width: 300px;
         height: 60vh;
         max-height: 70vh;
         padding: 10px;
